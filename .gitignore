@@ -1,0 +1,7 @@
+node_modules
+package-lock.json
+uploads
+dist
+typings
+dist.zip
+.env

@@ -1,0 +1,45 @@
+{
+  "name": "schood-edu",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "moderator:watch": "nodemon --exec ts-node -- --files ./src/moderator/app.ts",
+    "user:watch": "nodemon --exec ts-node -- --files ./src/user/app.ts",
+    "upload:watch": "nodemon --exec ts-node -- --files ./src/upload/app.ts",
+    "build": "node_modules/.bin/tsc; rm -r dist.zip; zip -r dist.zip dist",
+    "deploy": "scp -r dist.zip package.json .env public root@95.216.191.94:/root/Projects/SchoolEduDb; unzip  -o dist.zip"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/regist3/school-edu/backend.git"
+  },
+  "author": "kahero",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/regist3/school-edu/backend/issues"
+  },
+  "homepage": "https://gitlab.com/regist3/school-edu/backend#readme",
+  "dependencies": {
+    "@typegoose/typegoose": "^9.5.0",
+    "axios": "^0.24.0",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.13.2",
+    "dotenv": "^10.0.0",
+    "fastify": "^3.24.1",
+    "fastify-cors": "^6.0.2",
+    "fastify-file-upload": "^3.0.1",
+    "fastify-jwt": "^4.1.1",
+    "fastify-plugin": "^3.0.0",
+    "fastify-static": "^4.5.0",
+    "md5": "^2.3.0",
+    "mongoose": "^6.1.1"
+  },
+  "devDependencies": {
+    "@types/md5": "^2.3.1",
+    "@types/node": "^16.11.12",
+    "nodemon": "^2.0.15",
+    "ts-node": "^10.4.0"
+  }
+}
